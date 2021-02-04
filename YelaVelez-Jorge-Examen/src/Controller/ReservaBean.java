@@ -37,6 +37,7 @@ private static final long serialVersionUID = 1L;
 	private String hora;
 	private int aforo_max;
 	private String resultado;
+	private String resultado2;
 	private int id_cliente;
 	private String cedula_cliente;
 	private String nombres;
@@ -45,9 +46,9 @@ private static final long serialVersionUID = 1L;
 	private String telefono;
 	
 	public void addReserva() {
-		fecha = this.fecha;
-		hora = this.hora;
-		aforo_max = this.aforo_max;
+		String fecha = this.fecha;
+		String hora = this.hora;
+		int aforo_max = this.aforo_max;
 		Cliente cliente = ejbClienteFacade.buscarCliente(cedula);
 		Restaurante restaurante = ejbRestauranteFacade.buscarRestaurante(nombre_restaurante);
 		if(cliente != null && restaurante !=null) {
@@ -72,6 +73,21 @@ private static final long serialVersionUID = 1L;
 			this.cedula = "";
 		}
 		return resultado;
+	}
+	
+	public String buscarRestaurante() {
+		String nombre_restaurante = this.nombre_restaurante;
+		Restaurante restaurante = ejbRestauranteFacade.buscarRestaurante(nombre_restaurante);
+		System.out.println("Ingresa metodo buscar cliente desde reservaBean, ahora verificando existencia...");
+		System.out.println(restaurante.getNombre());
+		if(restaurante != null) {
+			resultado2 =  "Usuario Disponible";
+			this.nombre_restaurante = "";
+		}else {
+			resultado2 =  "Usuario no Disponible";
+			this.nombre_restaurante = "";
+		}
+		return resultado2;
 	}
 	
 	public void buscarReserva(){

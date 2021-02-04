@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:h="http://xmlns.jcp.org/jsf/html"
+	  xmlns:f="http://xmlns.jcp.org/jsf/core"
+	  xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+	<h:head>
+		<title>RESERVAS</title>
+	</h:head>
+	<h:body>
+		<h:form>
+			<legend >Registrar Reserva</legend>
+			<div>
+				<h:inputText id="id-card" name="text" type="text" a:placeholder="Cedula Cliente..." class="form-control" value="#{reservaBean.cedula}"/>
+				<h:outputLabel id="salida" name="text" type="text"  class="form-control" value="#{reservaBean.resultado}"/>
+			</div>
+			<div>
+				<h:inputText id="id-card" name="text" type="text" a:placeholder="Nombre Restaurante..." class="form-control" value="#{reservaBean.nombre_restaurante}"/>
+				<h:outputLabel id="salida" name="text" type="text"  class="form-control" value="#{reservaBean.resultado2}"/>
+			</div>
+			<div>
+				<h:inputText id="id-card2" name="text" type="text" a:placeholder="Fecha(YYYY-MM-DD)..." class="form-control" value="#{reservaBean.fecha}"/>
+			</div>
+			<div>
+				<h:inputText id="id-card3" name="text" type="text" a:placeholder="Hora..." class="form-control" value="#{reservaBean.hora}"/>
+			</div>
+			<div>
+				<h:inputText id="id-card3" name="text" type="text" a:placeholder="Numero de Personas..." class="form-control" value="#{reservaBean.aforo_max}"/>
+			</div>
+			<div>
+				<h:commandButton class="btn btn-primary btn-lg" value="Validar Usuario" action="#{reservaBean.buscarCliente}">
+					<f:ajax execute="id-card" render="salida"/>
+				</h:commandButton>
+			</div>
+			<div>
+				<h:commandButton class="btn btn-primary btn-lg" value="Validar Restaurante" action="#{reservaBean.buscarRestaurante}">
+					<f:ajax execute="id-card" render="salida"/>
+				</h:commandButton>
+			</div>
+			<div>
+				<h:commandButton class="btn btn-primary btn-lg" value="Reservar" action="#{reservaBean.addReserva}"></h:commandButton>
+			</div>
+		</h:form>
+	</h:body>
+</html>

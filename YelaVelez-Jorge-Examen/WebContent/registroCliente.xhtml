@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:h="http://xmlns.jcp.org/jsf/html"
+	  xmlns:f="http://xmlns.jcp.org/jsf/core"
+	  xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+	<h:head>
+		<title>CLIENTES</title>
+	</h:head>
+	<h:body>
+		<h:form>
+			<legend >Registrar Clientes</legend>
+			<div>
+				<h:inputText id="id-card" name="text" type="text" a:placeholder="Cedula..." class="form-control" value="#{clienteBean.cedula}"/>
+			</div>
+			<div>
+				<h:inputText id="id-card2" name="text" type="text" a:placeholder="Nombres..." class="form-control" value="#{clienteBean.nombres}"/>
+			</div>
+			<div>
+				<h:inputText id="id-card3" name="text" type="text" a:placeholder="Correo..." class="form-control" value="#{clienteBean.correo}"/>
+			</div>
+			<div>
+				<h:inputText id="id-card3" name="text" type="text" a:placeholder="Direccion..." class="form-control" value="#{clienteBean.direccion}"/>
+			</div>
+			<div>
+				<h:inputText id="id-card3" name="text" type="text" a:placeholder="Telefono..." class="form-control" value="#{clienteBean.telefono}"/>
+			</div>
+			<div>
+				<h:commandButton class="btn btn-primary btn-lg" value="Registrar Cliente" action="#{clienteBean.addCliente}"></h:commandButton>
+			</div>
+		</h:form>
+	</h:body>
+</html>
