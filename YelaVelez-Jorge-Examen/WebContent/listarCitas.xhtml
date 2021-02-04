@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:body>
+
+    <h:form>
+        <h:outputLabel value="Ingrese Fecha (YYYY-MM-DD): "/>
+        <h:inputText value="#{citaBean.fechaRequerida}"/>
+        <br/>
+
+        <h:outputLabel value="Ingrese la cedula del paciente: "/>
+        <h:inputText value="#{citaBean.cedula}"/>
+        <br/>
+
+        <h:commandButton value="Listar Datos" action="#{citaBean.buscarCita}">
+            <f:ajax render="cedula nombre apellido correo direccion fecha hora"/>
+        </h:commandButton><br/>
+        
+        <h:outputLabel id="cedula" value="Cedula: #{citaBean.cedula_obtenida}"/><br/>
+        <h:outputLabel id="nombre" value="Nombre: #{citaBean.nombre_obtenida}"/><br/>
+        <h:outputLabel id="apellido" value="Apellido: #{citaBean.apellido_obtenido}"/><br/>
+        <h:outputLabel id="correo" value="Correo: #{citaBean.correo_obtenido}"/><br/>
+        <h:outputLabel id="fecha" value="Cita Fecha: #{citaBean.fecha_obtenida}"/><br/>
+        <h:outputLabel id="hora" value="Cita Hora: #{citaBean.hora_obtenida}"/><br/>
+
+
+
+    </h:form>
+
+</h:body>
+
+</html>

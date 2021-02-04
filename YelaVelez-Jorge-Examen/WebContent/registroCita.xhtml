@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:h="http://xmlns.jcp.org/jsf/html"
+	  xmlns:f="http://xmlns.jcp.org/jsf/core"
+	  xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+	<h:head>
+		<title>CITAS-MEDICAS</title>
+	</h:head>
+	<h:body>
+		<h:form>
+			<legend >Registrar Cita Medica</legend>
+			<div>
+				<h:inputText id="id-card" name="text" type="text" a:placeholder="Cedula Paciente..." class="form-control" value="#{citaBean.cedula}"/>
+				<h:outputLabel id="salida" name="text" type="text"  class="form-control" value="#{citaBean.resultado}"/>
+			</div>
+			<div>
+				<h:inputText id="id-card2" name="text" type="text" a:placeholder="Fecha(YYYY-MM-DD)..." class="form-control" value="#{citaBean.fecha}"/>
+			</div>
+			<div>
+				<h:inputText id="id-card3" name="text" type="text" a:placeholder="Descripcion..." class="form-control" value="#{citaBean.descripcion}"/>
+			</div>
+			<div>
+				<h:commandButton class="btn btn-primary btn-lg" value="Validar Usuario" action="#{citaBean.buscarPaciente}">
+					<f:ajax execute="id-card" render="salida"/>
+				</h:commandButton>
+			</div>
+			<div>
+				<h:commandButton class="btn btn-primary btn-lg" value="Registrar Cita" action="#{citaBean.addCita}"></h:commandButton>
+			</div>
+		</h:form>
+	</h:body>
+</html>
