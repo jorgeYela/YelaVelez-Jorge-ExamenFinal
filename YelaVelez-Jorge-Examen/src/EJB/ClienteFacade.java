@@ -3,6 +3,7 @@ package EJB;
 import java.util.List; 
 import javax.ejb.Stateless; 
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import Entity.Cliente;
@@ -22,10 +23,10 @@ public class ClienteFacade extends AbstractFacade<Cliente>{
 		return em;
 	}
 	
-	public Cliente buscarCliente(String cedula) {
+	public Cliente buscarCliente(String cedulaEnviada) {
 		Cliente cliente = null;
-		System.out.println("Clase: ClienteFacada.java - Valor: "+cedula);
-		Query query = em.createQuery("SELECT c FROM Cliente c WHERE c.cedula = '"+cedula+"'");
+		System.out.println("Clase: PacienteFacada.java - Valor: "+cedulaEnviada);
+		Query query = em.createQuery("SELECT c FROM Cliente c WHERE c.cedula = '"+cedulaEnviada+"'");
 		cliente = (Cliente)query.getSingleResult();
 		return cliente;
 	}

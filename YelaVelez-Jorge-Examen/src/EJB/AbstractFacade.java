@@ -1,7 +1,6 @@
 package EJB;
 
-import java.util.List; 
-
+import java.util.List;  
 import javax.management.Query;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
@@ -29,8 +28,8 @@ public abstract class AbstractFacade<T> {
 		getEntityManager().remove(getEntityManager().merge(entity));
 	}
 	
-	public T find(Object id) {
-		return getEntityManager().find(entityClass, id);
+	public T find(Object nombre) {
+		return getEntityManager().find(entityClass, nombre);
 	}
 	
 	public List<T> findAll() {

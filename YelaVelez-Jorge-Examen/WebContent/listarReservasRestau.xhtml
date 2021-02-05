@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:body>
+
+    <h:form>
+        <h:outputLabel value="Ingrese el nombre del restaurante: "/>
+        <h:inputText value="#{reservaBean.nombreR}"/>
+        <br/>
+        
+        <h:outputLabel value="Ingrese la fecha: "/>
+        <h:inputText value="#{reservaBean.fecha}"/>
+        <br/>
+        
+        <h:commandButton value="Listar Reservas" action="#{reservaBean.buscarReservaRestaurante}">
+            <f:ajax render="fecha hora personas"/>
+        </h:commandButton><br/>
+        
+        <!-- <h:outputLabel id="fecha" value="Fecha: #{reservaBean.fecha_recuperada}"/><br/>
+        <h:outputLabel id="hora" value="Hora: #{reservaBean.hora_recuperada}"/><br/>
+        <h:outputLabel id="personas" value="Personas: #{reservaBean.aforo_max_recuperado}"/><br/>-->
+
+		<h:outputLabel id="salida10" name="text" type="text"  class="form-control" value="#{reservaBean.nuevoo}"/>
+
+    </h:form>
+
+	<div id="manejo">
+			<a href="http://localhost:58902/YelaVelez-Jorge-Examen/faces/registroCliente.xhtml">Registro Cliente</a><br></br>
+			<a href="http://localhost:58902/YelaVelez-Jorge-Examen/faces/registroRestaurante.xhtml">Registro Restaurant</a><br></br>
+			<a href="http://localhost:58902/YelaVelez-Jorge-Examen/faces/registroReserva.xhtml">Registro Reserva</a><br></br>
+			<a href="http://localhost:58902/YelaVelez-Jorge-Examen/faces/listarReservasCliente.xhtml">Listar Reserva Por Usuario</a><br></br>
+			<a href="http://localhost:58902/YelaVelez-Jorge-Examen/faces/listarReservasRestau.xhtml">Listar Reserva Por Restaurant</a>
+		</div>
+
+</h:body>
+
+</html>

@@ -1,6 +1,6 @@
 package Entity;
 
-import java.io.Serializable;
+import java.io.Serializable; 
 import javax.persistence.*;
 
 /**
@@ -92,7 +92,7 @@ public class Reserva implements Serializable {
 	@Override
 	public String toString() {
 		return "Reserva [id=" + id + ", num_personas=" + num_personas + ", fecha=" + fecha + ", hora=" + hora
-				+ ", cliente=" + cliente + ", restaurante=" + restaurante + "]";
+				+ ", cliente=" + cliente + ", restaurante=" + restaurante + "]\n\n";
 	}
    
 }
